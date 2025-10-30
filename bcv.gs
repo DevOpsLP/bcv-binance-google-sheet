@@ -48,7 +48,7 @@ function actualizarPreciosBCV() {
 
     const json = JSON.parse(res.getContentText());
     if (json && json.code === "000000" && Array.isArray(json.data) && json.data.length > 0) {
-      const adv = json.data[0].adv;
+      const adv = json.data[1].adv;
       precioBinance = parseFloat(adv.price); 
     } else {
       Logger.log("Respuesta de Binance sin datos válidos: " + res.getContentText());
